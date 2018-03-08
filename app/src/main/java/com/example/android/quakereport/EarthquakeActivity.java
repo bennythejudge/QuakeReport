@@ -31,25 +31,46 @@ public class EarthquakeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.earthquake_activity);
 
-        // Create a fake list of earthquake locations.
-        ArrayList<String> earthquakes = new ArrayList<>();
-        earthquakes.add("San Francisco");
-        earthquakes.add("London");
-        earthquakes.add("Tokyo");
-        earthquakes.add("Mexico City");
-        earthquakes.add("Moscow");
-        earthquakes.add("Rio de Janeiro");
-        earthquakes.add("Paris");
+        // create an arraylist of earthquakes
+        ArrayList<EarthQuake> earthquakes = new ArrayList<>();
+
+        earthquakes.add(new EarthQuake(
+                "8.9",
+                "San Francisco",
+                "2012-01-01"));
+        earthquakes.add(new EarthQuake(
+                "7.9",
+                "NYC",
+                "2013-01-01"));
+        earthquakes.add(new EarthQuake(
+                "6.9",
+                "Luxembourg",
+                "2014-01-01"));
+        earthquakes.add(new EarthQuake(
+                "5.9",
+                "Perugia",
+                "2015-01-01"));
+        earthquakes.add(new EarthQuake(
+                "4.9",
+                "Bertrange",
+                "2016-01-01"));
+        earthquakes.add(new EarthQuake(
+                "3.9",
+                "Paris",
+                "2017-01-01"));
 
         // Find a reference to the {@link ListView} in the layout
         ListView earthquakeListView = (ListView) findViewById(R.id.list);
 
         // Create a new {@link ArrayAdapter} of earthquakes
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-                this, android.R.layout.simple_list_item_1, earthquakes);
+        EarthQuakeAdapter adapter =
+                new EarthQuakeAdapter(this, earthquakes);
+
+
 
         // Set the adapter on the {@link ListView}
         // so the list can be populated in the user interface
         earthquakeListView.setAdapter(adapter);
+
     }
 }
