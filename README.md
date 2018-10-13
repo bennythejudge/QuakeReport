@@ -1,6 +1,8 @@
 Quake Report App
 ===================================
 
+[![GuardRails badge](https://badges.production.guardrails.io/bennythejudge/QuakeReport.svg)](https://www.guardrails.io)
+
 This app displays a list of recent earthquakes in the world
 from the U.S. Geological Survey (USGS) organization.
 
